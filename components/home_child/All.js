@@ -139,19 +139,6 @@ export default class All extends React.Component{
                   </View>
               </View>
           </View>
-//           <TouchableOpacity 
-//           onPress={()=>this.props.props.navigation.navigate("DetailScreen",{
-//             image: item.image,
-//             price: item.price,
-//             name: item.name
-//           })}
-//           style={styles.button}>
-//               <AntDesign 
-//                 name="arrowright"
-//                 color="green"
-//                 size={15}
-//               />
-//           </TouchableOpacity>
 
         </LinearGradient>
     )
