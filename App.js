@@ -9,7 +9,8 @@ fb.initializeApp(firebaseConfig);
 import LoginScreen from './components/LoginScreen';
 import LoadingScreen from './components/LoadingScreen';
 import Main from './components/MainComponent';
-import UserPanel from './components/UserPanel'
+import UserPanel from './components/UserPanel';
+import Score from './components/Score'
 import {createAppContainer,createSwitchNavigator} from 'react-navigation';
 
 
@@ -17,7 +18,8 @@ const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen: LoadingScreen,
   LoginScreen:LoginScreen,
   MainScreen: Main,
-  UserPanel: UserPanel
+  UserPanel: UserPanel,
+  Score:Score 
 })
 const AppNavigator= createAppContainer(AppSwitchNavigator)
 

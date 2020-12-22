@@ -2,7 +2,7 @@
 import React,{Component} from 'react';
 import { StyleSheet, Text, View,Button,ImageBackground, TouchableHighlight,Platform } from 'react-native';
 
-
+import * as Animatable from 'react-native-animatable';
 export const isAndroid = () => Platform.OS === 'android';
 export const isIOS = () => Platform.OS === 'ios';
 import * as Google from 'expo-google-app-auth';
@@ -17,11 +17,12 @@ const Login=(props)=> {
           .then(data=>props.navigation.navigate("MainScreen",{data:data}))
           .catch(e=>console.log(e))
   }
-
-
       return (
-          <View style={styles.container} >
+        
+             <View style={styles.container} >
+              
             <ImageBackground source={require('./images/question.gif')} style={styles.image}>
+            <Animatable.View animation="fadeInDown" duration={1000} delay={1000}>
               <View style={{width:'50%',alignItems:'center',textAlign:'center'}}>
               <Text style={{fontWeight:'bold',fontSize:30,marginBottom:30}}>MRio</Text>
               <Text style={{fontWeight:'bold'}}>JOIN WITH 10 MILLIONS PLAYER ENJOYED IN THE WORLD</Text>
@@ -32,9 +33,12 @@ const Login=(props)=> {
               </TouchableHighlight>    
 
             </View>
-          
+            </Animatable.View>
             </ImageBackground>
+           
           </View>
+        
+         
         );
 }
 const styles = StyleSheet.create({

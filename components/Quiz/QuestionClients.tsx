@@ -4,11 +4,13 @@ import { StyleSheet, Text, View, TouchableOpacity,Alert} from 'react-native';
 
 import {Difficluty,Kind, getQuizQuestions,QuestionState,unicodeToChar} from './Util';
 
-import Button from './Button'
-import Question from './Question'
-import Answer from './Answer'
-import Next from '../Icons/Next'
-import Play from '../Icons/Play'
+import Button from './Button';
+import Question from './Question';;
+import Answer from './Answer';
+import Next from '../Icons/Next';
+import Play from '../Icons/Play';
+
+import Score from '../Score';
 export type AnswerObject={
   question:string,
   answer:string,
@@ -24,7 +26,7 @@ export default function QuestionDetail() {
   const[userAnswers,setUserAnswers]= useState<AnswerObject[]>([]);
   const[score,setScore]=useState(0);
   const[gameOver,setGameOver]=useState(true);
-  const[TOTAL_QUESTION]=useState(10);
+  const[TOTAL_QUESTION]=useState(5);
   const[number,setNumber]=useState(0)
   const setAnswer= useRef(null);
 
@@ -116,9 +118,6 @@ export default function QuestionDetail() {
 
         </>
     ):null}
-
-
-  
       <View style={styles.bottomcontainer}>
         <TouchableWithoutFeedback>
         {!gameOver && !loading && number !=TOTAL_QUESTION-1?(

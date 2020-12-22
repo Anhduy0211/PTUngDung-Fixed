@@ -15,7 +15,7 @@ import HelpUser from './Help';
 import UserPanel from './UserPanel';
 import RankingScreen from './Ranking'
 import History from './History'
-
+import * as Animatable from 'react-native-animatable';
 
 const Tab = createBottomTabNavigator();
 function TabNavigatorScreen(){
@@ -79,19 +79,17 @@ function QuizNavigatorScreen() {
 function QuizScreen({navigation,route}) {
   return (
     /** LEVEL*/
-    <ScrollView>
- <View style={{ flex: 1,textAlign:'center' }}>
     
+ <View style={{ flex: 1,textAlign:'center',alignItems:'center',justifyContent:'center'}}>
+    <Animatable.View animation="fadeInDown" duration={2000} delay={1500} >
     <Card >
       <View style={{flexDirection:'row',marginBottom:10}}>
         <Avatar rounded source={require('./images/cat.jpg')} />
         {/* {route.params.data.user.givenName} */}
-  <Text style={{fontWeight:'bold'}} >Hello, Duy</Text>
+        <Text style={{fontWeight:'bold'}} >Hello, Duy</Text>
         
       </View>
       <Card.Divider/>
-   
-      {/* <CarouselComponent/> */}
 
       <View style={styles.menuchoice}>
 
@@ -109,7 +107,7 @@ function QuizScreen({navigation,route}) {
         </TouchableHighlight>
       </View>
 
-      <View style={styles.menuchoice}>
+      {/* <View style={styles.menuchoice}>
 
         <TouchableHighlight underlayColor="#f1f8e9" activeOpacity={0.6} onPress={()=>{navigation.navigate('UserPanel')}} style={styles.menuchoice_details}>
           <View>
@@ -118,12 +116,13 @@ function QuizScreen({navigation,route}) {
           </View>
         </TouchableHighlight>
 
-</View>
+      </View> */}
     </Card>
+    </Animatable.View>
+       
     
  
   </View>
-    </ScrollView>
    
   );
 }
@@ -236,7 +235,8 @@ const styles = StyleSheet.create({
       backgroundColor:'orange',
       width:'50%',
       justifyContent:'center',
-      alignItems:'center'
+      alignItems:'center',
+      borderRadius:25
     }
 }
 )
