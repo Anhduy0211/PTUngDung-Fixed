@@ -146,11 +146,7 @@ export default class Menu extends React.Component{
   renderItem_type = ({item}) => {
     return(
         <TouchableOpacity 
-        onPress={()=>this.props.props.navigation.navigate("DetailScreen",{
-          image: item.image,
-          price: item.price,
-          name: item.name
-        })}
+        
         style={styles.item_type}>
             <Image 
               source={item.image}
