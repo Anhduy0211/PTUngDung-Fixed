@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DemoWeek1",
-    "slug": "DemoWeek1",
+    "name": "FunQuestions",
+    "slug": "FunQuestions",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,10 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "english.language.confusion",
+      "buildNumber": "1.0.0"
+    },
+    "android":{
+      "package": "english.language.confusion",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
     }
   }
 }
+

@@ -26,7 +26,7 @@ export default function QuestionDetail() {
   const[userAnswers,setUserAnswers]= useState<AnswerObject[]>([]);
   const[score,setScore]=useState(0);
   const[gameOver,setGameOver]=useState(true);
-  const[TOTAL_QUESTION]=useState(5);
+  const[TOTAL_QUESTION]=useState(10);
   const[number,setNumber]=useState(0)
   const setAnswer= useRef(null);
 

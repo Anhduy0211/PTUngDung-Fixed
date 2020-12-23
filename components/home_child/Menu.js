@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity
 } from "react-native";
-
+import * as Animatable from 'react-native-animatable';
 export default class Menu extends React.Component{
 
   constructor(props){
@@ -17,6 +17,7 @@ export default class Menu extends React.Component{
         {
             type: '20-12-2020',
             color: '#39b54a',
+            animation:'zoomInRight',
             data:[
                 {
                   name:'Thor',
@@ -40,6 +41,7 @@ export default class Menu extends React.Component{
         {
             type: '19-12-2020',
             color: 'orange',
+            animation:'zoomInLeft',
             data:[
                 {
                   name:'Peter Paker',
@@ -71,6 +73,7 @@ export default class Menu extends React.Component{
         {
             type: '18-12-2020',
             color: 'red',
+            animation:'zoomInRight',
             data:[
               {
                 name:'Scarlet ',
@@ -90,6 +93,7 @@ export default class Menu extends React.Component{
         {
           type: '17-12-2020',
           color: 'red',
+          animation:'zoomInLeft',
           data:[
             {
               name:'Doctor',
@@ -116,6 +120,7 @@ export default class Menu extends React.Component{
             {
               type: '16-12-2020',
               color: 'red',
+              animation:'zoomInRight',
               data:[
                 {
                   name:'Em day',
@@ -160,8 +165,10 @@ export default class Menu extends React.Component{
 
   renderItem = ({item}) => {
     return(
+      <Animatable.View animation={item.animation} duration={2000} delay={800}>
       <View style={{flex:1}}>
-          <Text style={[styles.type,{
+       
+        <Text style={[styles.type,{
             color: item.color
           }]}>{item.type}</Text>
           <View style={[styles.item,{
@@ -176,7 +183,10 @@ export default class Menu extends React.Component{
                 ItemSeparatorComponent={this.ItemSeparatorComponent_type}
               />
           </View>
+       
+          
       </View>
+      </Animatable.View>
     )
   }
 

@@ -11,11 +11,12 @@ import {
 import {LinearGradient} from 'expo-linear-gradient';
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
+import * as Animatable from 'react-native-animatable';
 var data = [
         {
             rank: "Rank 1",
             name:'Tony Stark',
+            animation:'zoomInRight',
             image: require("../asset/ironman.jpg"),
             rating: 3,
             price: "Score: 13442"
@@ -23,6 +24,7 @@ var data = [
         {
             rank: "Rank 2",
             name:'Roger',
+            animation:'zoomInLeft',
             image: require("../asset/captain.jpg"),
             rating: 5,
             price: "Score: 10015"
@@ -30,6 +32,7 @@ var data = [
         {
             rank: "Rank 3",
             name:'Banne',
+            animation:'zoomInRight',
             image: require("../asset/hulk.jpg"),
             rating: 4,
             price: "Score: 7520"
@@ -37,6 +40,7 @@ var data = [
         {
             rank: "Rank 4",
             name:'Scarlet ',
+            animation:'zoomInLeft',
             image: require("../asset/blackw.jpg"),
             rating: 2,
             price: "Score: 4312"
@@ -44,6 +48,7 @@ var data = [
         
         {
           rank: "Rank 5",
+          animation:'zoomInRight',
           name:'Thor',
           image: require("../asset/thor.jpg"),
           rating: 5,
@@ -52,6 +57,7 @@ var data = [
         {
           rank: "Rank 6",
           name:'Peter Paker',
+          animation:'zoomInLeft',
           image: require("../asset/spider.jpg"),
           rating: 5,
           price: "Score: 2100"
@@ -59,6 +65,7 @@ var data = [
         {
           rank: "Rank 7",
           name:'Hentai',
+          animation:'zoomInLeft',
           image: require("../asset/bb.jpg"),
           rating: 5,
           price: "Score: 1434"
@@ -66,6 +73,7 @@ var data = [
         {
           rank: "Rank 8",
           name:'Doctor',
+          animation:'zoomInLeft',
           image: require("../asset/doctrange.jpg"),
           rating: 5,
           price: "Score: 1266"
@@ -73,6 +81,7 @@ var data = [
         {
           rank: "Rank 9",
           name:'Em day',
+          animation:'zoomInRight',
           image: require("../asset/animebb.jpg"),
           rating: 5,
           price: "Score: 784"
@@ -80,6 +89,7 @@ var data = [
         {
           rank: "Rank 10",
           name:'Captain Marvel',
+          animation:'zoomInLeft',
           image: require("../asset/capmarvel.jpg"),
           rating: 5,
           price: "Score: 88"
@@ -113,6 +123,7 @@ export default class All extends React.Component{
 
   renderItem = ({item}) => {
     return(
+      <Animatable.View animation={item.animation} duration={2000} delay={800} >
         <LinearGradient 
         colors={['#009245', '#8cc631']}
         start={{x:0, y:1}} end={{x:1, y:0}}
@@ -141,6 +152,7 @@ export default class All extends React.Component{
           </View>
 
         </LinearGradient>
+        </Animatable.View>
     )
   }
 

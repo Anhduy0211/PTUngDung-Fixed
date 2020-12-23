@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import All from "./home_child/All";
+import * as Animatable from 'react-native-animatable';
 import Menu from "./home_child/Menu";
 import Popular from "./home_child/Popular";
 
@@ -17,6 +18,7 @@ class RankingScreen extends Component{
     render(){
         return(    
           <View style={styles.container}>
+            
             <View style={styles.header}>
                 <ImageBackground
                 source={require("./asset/header.png")}

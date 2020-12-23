@@ -15,8 +15,8 @@ import {createAppContainer,createSwitchNavigator} from 'react-navigation';
 
 
 const AppSwitchNavigator = createSwitchNavigator({
-  LoadingScreen: LoadingScreen,
-  LoginScreen:LoginScreen,
+  // LoadingScreen: LoadingScreen,
+  // LoginScreen:LoginScreen,
   MainScreen: Main,
   UserPanel: UserPanel,
   Score:Score 

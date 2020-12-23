@@ -12,11 +12,13 @@ import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-vi
 import All from "./home_child/All";
 import Menu from "./home_child/Menu";
 import Popular from "./home_child/Popular";
-
+import * as Animatable from 'react-native-animatable';
 class RankingScreen extends Component{
     render(){
         return(    
+          
           <View style={styles.container}>
+            <Animatable.View animation="fadeInDown" duration={2000} delay={800}>  
             <View style={styles.header}>
                 <ImageBackground
                 source={require("./asset/header.png")}
@@ -26,23 +28,14 @@ class RankingScreen extends Component{
                     <Text style={styles.title}>HISTORY</Text>
                 </ImageBackground>
             </View>
+            </Animatable.View>
             <View style={styles.tabbar}>
-              <ScrollableTabView
-                initialPage={0}
-                tabBarActiveTextColor="green"
-                renderTabBar={() => <DefaultTabBar
-                  underlineStyle={{
-                    backgroundColor:'green'
-                  }} />}
-              >
-                
-                <Menu tabLabel="Player History"/>
-                
-
-              </ScrollableTabView>
+               <Menu />
+              
             </View>
+            
           </View>
-
+       
         )
     }
 }
